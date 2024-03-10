@@ -1,0 +1,24 @@
+﻿@using PMQLSuperbrain_Core.Models
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>Mã</th>
+        <th>Quyền</th>
+    </tr>
+    @foreach (var item in ViewBag.ProjectList)
+{
+        <tr class="bg-success">
+            <td colspan="2">[@item.CategoryCode] @item.CategoryName</td>
+        </tr>
+        @foreach (var per in item.Permissions)
+        {
+            <tr>
+                <td>@per.Ma</td>
+                <td>@per.Name</td>
+            </tr>
+        }
+    }
+</table>
